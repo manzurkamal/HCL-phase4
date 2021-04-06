@@ -1,5 +1,40 @@
 var selectedRow = null
 
+
+var myData2 = [
+    {"fullName" : "Microsoft", "pName" : "Apollo", "cost" : 1000, "city" : "CA"},
+    {"fullName" : "Intel", "pName" : "Hermes", "cost" : 10000, "city" : "WA"},
+    {"fullName" : "Apple", "pName" : "Zeus", "cost" : 100000, "city" : "TX"}
+    ]
+    
+    
+    var currentDealId = myData.length;
+    
+    
+    
+
+    localStorage.setItem("myData2", "test")
+    
+    var myDataTest2 = localStorage.getItem("myData2")
+	
+
+
+function onCreateAddData2() {
+	
+     var formData = {};
+	 for(var i = 0; i < myData.length; i++){
+		   formData["fullName"] =  myData2[i]["fullName"];
+    formData["pName"] =  myData2[i]["pName"];
+    formData["cost"] =   myData2[i]["cost"];
+    formData["city"] =   myData2[i]["city"];
+	insertNewRecord(formData);
+	}
+	
+  
+  
+}
+
+
 function onFormSubmit() {
     if (validate()) {
         var formData = readFormData();

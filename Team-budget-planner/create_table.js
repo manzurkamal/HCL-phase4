@@ -50,9 +50,17 @@ var myData = [
     
         tr = table.insertRow(-1);
     
-        for (var j = 0; j < col.length; j++) {
+        for (var j = 0; j < col.length+1; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = myData[i][col[j]];
+            
+			if(j==col.length){
+				tabCell.innerHTML =`<a onClick="onEdit2(this)">Edit</a>
+                        <a onClick="DeleteRow(' + myData[i].dealId + ')">Delete</a>`;
+					//	'<button onclick="DeleteRow(' + myData[i].dealId + ')"> <img src="trashcan.png"> </button>';
+			}else{
+				tabCell.innerHTML = myData[i][col[j]];
+				
+			}
         }
         // Insert Extra Cell for the Delete Icon
         //TODO: Complete this
@@ -67,6 +75,16 @@ var myData = [
     divContainer.appendChild(table);
     }
     
+	
+	function onEdit2(td) {
+    selectedRow = td.parentElement.parentElement;
+    document.getElementById("clientNameInput").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("projectNameInput").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("projectManagerInput").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("projectCostInput").value = selectedRow.cells[4].innerHTML;
+}
+
+
     function AddNewDeal() {
     var clientName = document.getElementById("clientNameInput").value;
     var projectName = document.getElementById("projectNameInput").value;
