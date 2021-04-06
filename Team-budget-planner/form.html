@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Team Budget Planer | Product Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.2.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td 
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+    <script src="create_table.js"></script>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md">
+    <a class="navbar-brand" href="#"><img src="images/noodle.png" alt=""></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-navigation">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="form.html">Product Manager</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page.html">Finance Manager</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+
+   
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.2.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</body>
+
+<body onload="CreateTableFromJSON()">
+  <p id="showData"></p>
+  <H3>Add New Deal</H3>
+  <p id="newData"> 
+      <label>Client Name</label><input type="text" id="clientNameInput" /><br />
+      <label>Project Name</label><input type="text" id="projectNameInput" /><br />
+      <label>Project Manager</label><input type="text" id="projectManagerInput" /><br />
+      <label>Project Cost</label><input type="number" id="projectCostInput" /><br />
+  </p>
+  <input type="button" onclick="AddNewDeal()" value="Save" />
+  
+</body>
+
+<br></br>
+
+<body>
+  <H3>Add New Vendor</H3>
+  <table>
+      <tr>
+          <td>
+              <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                  <div>
+                      <label>Vendor Name</label><label class="validation-error hide" id="fullNameValidationError"></label>
+                      <input type="text" name="fullName" id="fullName">
+                  </div>
+                  <div>
+                      <label>Project Name</label>
+                      <input type="text" name="pName" id="pName">
+                  </div>
+                  <div>
+                      <label>Project Cost</label>
+                      <input type="text" name="cost" id="cost">
+                  </div>
+                  <div>
+                      <label>Location</label>
+                      <input type="text" name="city" id="city">
+                  </div>
+                  <div  class="form-action-buttons">
+                      <input type="submit" value="Submit">
+                  </div>
+              </form>
+          </td>
+      </table>
+      <table>
+          <td>
+              <table class="list" id="vendorList">
+                  <thead>
+                      <tr>
+                          <th>Vendor Name</th>
+                          <th>Project Name</th>
+                          <th>Project Cost</th>
+                          <th>Location</th>
+                          
+                      </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+              </table>
+          </td>
+      </tr>
+  </table>
+
+
+  <script src="pmscript.js"></script>
+</body>
+
+</html>
