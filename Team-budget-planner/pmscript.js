@@ -8,9 +8,7 @@ var myData2 = [
     ]
     
     
-    var currentDealId = myData.length;
-    
-    
+    var currentDealId = myData.length;  
     
 
     localStorage.setItem("myData2", "test")

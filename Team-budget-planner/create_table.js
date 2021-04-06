@@ -5,8 +5,7 @@ var myData = [
     ]
     
     
-    var currentDealId = myData.length;
-    
+    var currentDealId = myData.length;    
     
     
     // localstorage allows us to persist key value pairs in a way that would survive page refreshes, navigation, and user closing/reopening browser.
